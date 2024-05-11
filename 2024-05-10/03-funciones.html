@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Funciones en JavaScript</title>
+    <script>
+      // Closures
+      let texto = "original";
+
+      // Funcion anonima
+      const a = function () {
+        console.log("En funcion anonima", texto);
+        texto = "cambio";
+        console.log("En funcion anonima", texto);
+      };
+
+      // Funcion flecha
+      const b = () => {
+        console.log("En funcion flecha", texto);
+      };
+
+      console.log(texto);
+      a();
+      console.log(texto);
+      b();
+      console.log(texto);
+    </script>
+  </head>
+  <body></body>
+</html>

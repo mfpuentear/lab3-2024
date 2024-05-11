@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Funciones en JavaScript</title>
+    <script>
+      // Declaracion de la funcion
+      // (...) operador de resto
+      function unaFuncion(texto, otroTexto, otroMas = "aaaaa", ...otros) {
+        console.log("en unaFuncion:", texto, otroTexto, otroMas);
+        console.log(otros);
+      }
+
+      // Llamado a la funcion con argumentos de menos
+      unaFuncion("Hola", "mundo");
+
+      // Llamado a la funcion con argumentos de mas
+      unaFuncion("Hola", "mundo", "!", "otras", "cosas", "mas");
+    </script>
+  </head>
+  <body></body>
+</html>

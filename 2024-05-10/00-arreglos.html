@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Arreglos en JavaScript</title>
+    <script>
+      const a = [3, 4, 4];
+      console.log(a);
+      a.pop();
+      console.log(a);
+      a.push(6);
+      console.log(a);
+
+      const b = [8, "algo", 6.8];
+      console.log(b);
+      b[1] = "otro";
+      console.log(b);
+
+      // Spread operator
+      const c = [3, 5, ...a, 8];
+      console.log(c);
+      console.log(c.at(-1));
+    </script>
+  </head>
+  <body></body>
+</html>

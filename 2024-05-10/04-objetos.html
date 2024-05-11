@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Objetos en JavaScript</title>
+    <script>
+      const obj = {
+        atributo: "hola",
+        numero: 45,
+        // metodo con nombre
+        mostrarNumero() {
+          console.log(this.numero);
+        },
+        // metodo a partir de funcion anonima
+        mostrarNumeroAnon: function () {
+          console.log(this.numero);
+        },
+        // metodo a partir de funcion flecha
+        mostrarNumeroFlecha: () => {
+          console.log(this.numero);
+        },
+      };
+
+      obj.mostrarNumero();
+      obj.numero = 9;
+      obj.mostrarNumeroAnon();
+      obj.numero = 16;
+      obj.mostrarNumeroFlecha();
+    </script>
+  </head>
+  <body></body>
+</html>
