@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 03</title>
+  </head>
+  <body>
+    <p id="mensaje">Mensaje</p>
+    <input id="entrada" />
+  </body>
+  <script>
+    const mensaje = $("mensaje");
+    const entrada = $("entrada");
+
+    // Con funcion flecha
+    /*
+    entrada.addEventListener("input", () => {
+      mensaje.innerText = entrada.value;
+    });
+    */
+
+    // Con atributo onchange
+    entrada.oninput = () => {
+      mensaje.innerText = entrada.value;
+    };
+
+    // Con atributo y funcion anonima
+    /*
+    entrada.oninput = function () {
+      mensaje.innerText = this.value;
+    };
+    */
+
+    // simplificar el uso de getElementById
+    function $(elemento) {
+      return document.getElementById(elemento);
+    }
+  </script>
+</html>

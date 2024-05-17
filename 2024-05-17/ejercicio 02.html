@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 02</title>
+  </head>
+  <body>
+    <p id="mensaje">Mensaje</p>
+    <input id="entrada" />
+    <!-- <button id="cambiar" onclick="onClick()">Cambiar mensaje</button> -->
+    <button id="cambiar">Cambiar mensaje</button>
+  </body>
+  <script>
+    const mensaje = $("mensaje");
+    const entrada = $("entrada");
+    const cambiar = $("cambiar");
+
+    // Con funcion flecha
+    /*
+    cambiar.addEventListener("click", () => {
+      mensaje.innerText = entrada.value;
+    });
+    */
+
+    // Con atributo onclick
+    cambiar.onclick = () => {
+      mensaje.innerText = entrada.value;
+    };
+
+    // Con funcion
+    /*
+    cambiar.addEventListener("click", onClick);
+
+    function onClick() {
+      mensaje.innerText = entrada.value;
+    }
+    */
+
+    function $(elemento) {
+      return document.getElementById(elemento);
+    }
+  </script>
+</html>

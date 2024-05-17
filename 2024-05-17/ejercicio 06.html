@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 06</title>
+    <style>
+      .contenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+        height: 600px;
+        border: 1px solid black;
+      }
+      .item1 {
+        flex-basis: 100px;
+        background-color: red;
+        color: white;
+        text-align: center;
+        margin: 5px;
+        padding: 10px;
+      }
+      .item2 {
+        flex-basis: 150px;
+        background-color: green;
+        color: white;
+        text-align: center;
+        margin: 5px;
+        padding: 10px;
+      }
+      .item3 {
+        flex-basis: 200px;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        margin: 5px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="item1">item 1</div>
+      <div class="item2">item 2</div>
+      <div class="item3">item 3</div>
+    </div>
+  </body>
+  <script>
+    // simplificar el uso de getElementById
+    function $(elemento) {
+      return document.getElementById(elemento);
+    }
+  </script>
+</html>
