@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 08</title>
+  </head>
+  <body>
+    <h1>Listado de personas</h1>
+    <form id="formulario">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" />
+      <button type="submit">Agregar</button>
+    </form>
+    <ol id="listado" />
+  </body>
+  <script>
+    const formulario = $("formulario");
+    const nombre = $("nombre");
+    const listado = $("listado");
+
+    formulario.onsubmit = (e) => {
+      if (nombre.value !== "") {
+        const item = document.createElement("li");
+        item.textContent = nombre.value;
+        nombre.value = "";
+        listado.appendChild(item);
+      }
+      e.preventDefault();
+    };
+
+    function $(elemento) {
+      return document.getElementById(elemento);
+    }
+  </script>
+</html>

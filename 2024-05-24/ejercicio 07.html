@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 07</title>
+  </head>
+  <body>
+    <h1>Listado de personas</h1>
+    <ol id="listado" />
+  </body>
+  <script>
+    const personas = ["Pepe", "Maria", "Juan", "Pedro", "Cacho"];
+
+    const listado = $("listado");
+
+    // Clasica
+    /*
+    for (let i = 0; i < 5; i++) {
+      const item = document.createElement("li");
+      item.textContent = personas[i];
+      listado.appendChild(item);
+    }*/
+
+    // for of
+    /*
+    for (const persona of personas) {
+      const item = document.createElement("li");
+      item.textContent = persona;
+      listado.appendChild(item);
+    }*/
+
+    // forEach
+    /*
+    personas.forEach((persona) => {
+      const item = document.createElement("li");
+      item.textContent = persona;
+      listado.appendChild(item);
+    });*/
+
+    // map
+    /*
+    const nuevoArreglo = personas.map((persona) => {
+      const item = document.createElement("li");
+      item.textContent = persona;
+      listado.appendChild(item);
+    });*/
+
+    //console.log(nuevoArreglo);
+
+    function $(elemento) {
+      return document.getElementById(elemento);
+    }
+  </script>
+</html>
