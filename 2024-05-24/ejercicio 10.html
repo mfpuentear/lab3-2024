@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 10</title>
+  </head>
+  <body>
+    <h1>Formulario de persona</h1>
+    <form id="formulario">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" />
+      </div>
+      <div>
+        <label for="apellido">Apellido:</label>
+        <input id="apellido" name="apellido" required />
+      </div>
+      <div>
+        <label for="edad">Edad:</label>
+        <input id="edad" name="edad" type="number" min="0" />
+      </div>
+      <div>
+        <p id="mensaje"></p>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+  <script>
+    const formulario = $("formulario");
+    const mensaje = $("mensaje");
+    const edad = $("edad");
+
+    formulario.addEventListener("submit", (e) => {
+      //Enviar formulario
+      e.preventDefault();
+    });
+
+    formulario.addEventListener("focusout", () => {
+      mensaje.style.color = "red";
+      // Verificar campos
+      if (formulario["nombre"].value === "") {
+        mensaje.textContent = "Nombre vacio";
+      } else if (formulario["apellido"].value === "") {
+        mensaje.textContent = "Apellido vacio";
+      } else if (formulario["edad"].value < 0) {
+        mensaje.textContent = "La edad es negativa";
+      } else if (formulario["edad"].value == "") {
+        mensaje.textContent = "La edad esta vacia";
+      } else if (formulario["edad"].value < 18) {
+        mensaje.textContent = "No se puede enviar menor de edad";
+      } else {
+        mensaje.textContent = "Todos los datos son correctos";
+        mensaje.style.color = "green";
+      }
+    });
+
+    function $(elemento) {
+      return document.getElementById(elemento);
+    }
+  </script>
+</html>

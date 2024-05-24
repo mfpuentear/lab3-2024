@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 09</title>
+  </head>
+  <body>
+    <h1>Listado de personas</h1>
+    <ol id="listado" />
+  </body>
+  <script>
+    const listado = $("listado");
+
+    const personas = [
+      { id: 1, nombre: "Pepe", apellido: "Sanchez", edad: 13 },
+      { id: 2, nombre: "Maria", apellido: "Flores", edad: 23 },
+      { id: 3, nombre: "Pedro", apellido: "Altamirano", edad: 23 },
+    ];
+
+    personas.forEach((persona) => {
+      const item = document.createElement("li");
+      item.textContent = `${persona.apellido}, ${persona.nombre} - ${persona.edad}`;
+      listado.appendChild(item);
+    });
+
+    function $(elemento) {
+      return document.getElementById(elemento);
+    }
+  </script>
+</html>

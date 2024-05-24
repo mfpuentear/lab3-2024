@@ -21,8 +21,19 @@
     formulario.onsubmit = (e) => {
       if (nombre.value !== "") {
         const item = document.createElement("li");
-        item.textContent = nombre.value;
+        const itemName = nombre.value;
+        item.textContent = itemName;
         nombre.value = "";
+
+        const eliminar = document.createElement("button");
+        eliminar.textContent = "X";
+        eliminar.onclick = () => {
+          if (confirm(`¿Desea borra el item ${itemName}?`)) {
+            item.remove();
+          }
+        };
+
+        item.appendChild(eliminar);
         listado.appendChild(item);
       }
       e.preventDefault();
